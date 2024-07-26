@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, compose, legacy_createStore as createStore } from "redux";
 import createSagaMiddleware from 'redux-saga';
 import { inputReducer1 } from "./slices/inputReducer1";
+import { rootSaga } from "./sagas";
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,9 +17,7 @@ const allReducers = combineReducers({
         // result: resultReducer
 });
 
-export function* helloSaga() {
-    console.log('Hello Sagas!')
-  }
+
 
 export const store = createStore(allReducers,
     composeEnhancers(
@@ -26,5 +25,5 @@ export const store = createStore(allReducers,
     )
 )
 
-sagaMiddleware.run(helloSaga)
+sagaMiddleware.run(rootSaga)
 

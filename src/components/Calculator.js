@@ -9,7 +9,7 @@ export const Calculator = ()=>{
                 <input placeholder="Input 1" type="number"
                     />
                 <select>
-                    {['+','-','*','/'].map((op)=> <option >{op}</option>)}
+                    {['+','-','*','/'].map((operator)=> <option >{operator}</option>)}
                 </select>
                 
                 <input placeholder="Input 2" type="number"
